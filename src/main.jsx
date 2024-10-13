@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 
 import ErrorPage from './ErrorPage';
-import Contact from './routes/Contact';
+import Contact, { contactLoader } from './routes/Contact';
 import Root, { rootAction, rootLoader } from './routes/Root';
 
 const router = createBrowserRouter([
@@ -18,6 +18,7 @@ const router = createBrowserRouter([
       {
         path: 'contacts/:contactId',
         element: <Contact />,
+        loader: contactLoader,
       },
     ],
   },
