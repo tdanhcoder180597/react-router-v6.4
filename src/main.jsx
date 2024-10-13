@@ -5,7 +5,7 @@ import './index.css';
 
 import ErrorPage from './ErrorPage';
 import Contact from './routes/Contact';
-import Root, { rootLoader } from './routes/Root';
+import Root, { rootAction, rootLoader } from './routes/Root';
 
 const router = createBrowserRouter([
   {
@@ -13,6 +13,7 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     loader: rootLoader,
+    action: rootAction,
     children: [
       {
         path: 'contacts/:contactId',
